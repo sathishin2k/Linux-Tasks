@@ -1,0 +1,111 @@
+Useradd
+
+root@goorm:~# sudo useradd first
+root@goorm:~# cat /etc/passwd | grep first
+first:x:1001:1001::/home/first:/bin/bash
+
+d - for Dirctory , u - uid, g - group  
+
+root@goorm:~# sudo useradd -d /home/myname -u 1234 -g 0001 sathish
+root@goorm:~# cat /etc/passwd | grep sathish
+sathish:x:1234:1::/home/myname:/bin/bash
+
+e - set expired user, c - set additional information
+root@goorm:/users# sudo useradd -e 2023-03-28 -c "Sathish" itsme
+root@goorm:/users# cat /etc/passwd | grep itsme
+itsme:x:1238:1238:Sathish:/home/itsme:/bin/bash
+
+s - set shell 
+root@goorm:~# sudo useradd -s /bin/sh  demon  
+root@goorm:~# cat /etc/passwd | grep demon
+demon:x:1239:1239::/home/demon:/bin/sh
+
+p - Unencrpted Password
+sudo useradd -p 1234 sun
+
+--- adduser - Command Use For Create User Set Personal Information ---
+root@goorm:/# adduser opening
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+        LANGUAGE = "en_US.UTF-8",
+        LC_ALL = (unset),
+        LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+Adding user `opening' ...
+Adding new group `opening' (1002) ...
+Adding new user `opening' (1002) with group `opening' ...
+Creating home directory `/home/opening' ...
+Copying files from `/etc/skel' ...
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+Changing the user information for opening
+Enter the new value, or press ENTER for the default
+        Full Name []: opening
+        Room Number []: ipl
+        Work Phone []: 100
+        Home Phone []: 999
+        Other []: 0
+Is the information correct? [Y/n] y
+root@goorm:/# cat /etc/passwd | grep opening
+opening:x:1002:1002:opening,ipl,100,999,0:/home/opening:/bin/bash
+
+
+adduser command --shell for sh, --home for directory change, --uid for set uid, --gid for set group id
+root@goorm:/workspace/Linux2# sudo adduser google --shell /bin/sh
+ --home /home/g --uid 123456 --gid 0004
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+        LANGUAGE = "en_US.UTF-8",
+        LC_ALL = (unset),
+        LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+Adding user `google' ...
+Adding new user `google' (123456) with group `adm' ...
+Creating home directory `/home/g' ...
+Copying files from `/etc/skel' ...
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+Changing the user information for google
+Enter the new value, or press ENTER for the default
+        Full Name []: google
+        Room Number []: 001
+        Work Phone []: 000
+        Home Phone []: 000
+        Other []: 0
+Is the information correct? [Y/n] y
+root@goorm:/workspace/Linux2# cat /etc/passwd | grep google
+google:x:123456:4:google,001,000,000,0:/home/g:/bin/sh
+
+Usermod commands for Modify User
+root@goorm:~# sudo usermod -d home/sat -e 2023-03-24 -s  /bin/sh -u 1230 -g 0005 -p 12345 sathish
+root@goorm:~# cat /etc/passwd | grep sathish
+sathish:x:1230:5::home/sat:/bin/sh
+
+-l for Change Username
+root@goorm:~# sudo usermod -l sathish saran
+usermod: user 'saran' does not exist
+root@goorm:~# sudo usermod -l saran sathish
+root@goorm:~# cat /etc/passwd | grep saran
+saran:x:1230:5::home/sat:/bin/sh
+
+set passwd for user encrypted
+root@goorm:~# passwd mani
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+
+lock & unlock passwd
+root@goorm:~# passwd -l mani
+passwd: password expiry information changed.
+
+User Lock & unlock
+root@goorm:/# sudo usermod -L newuser
+root@goorm:/# sudo usermod -U newuser
+
+Delete User
+root@goorm:/# userdel newuser
+root@goorm:/# cat /etc/passwd | grep newuser

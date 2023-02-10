@@ -1,0 +1,407 @@
+root@goorm:/workspace/Linux# lsb_release --a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 18.04.2 LTS
+Release:        18.04
+Codename:       bionic
+
+root@goorm:/workspace/Linux# sudo apt update
+Hit:1 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:2 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:3 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease
+Get:4 https://cli-assets.heroku.com/apt ./ InRelease [2550 B]
+Hit:6 http://security.ubuntu.com/ubuntu bionic-security InRelease
+Get:5 https://cf-cli-debian-repo.s3.amazonaws.com stable InRelease [2679 B]
+Err:4 https://cli-assets.heroku.com/apt ./ InRelease
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 536F8F1DE80F6A35
+Err:5 https://cf-cli-debian-repo.s3.amazonaws.com stable InRelease
+  The following signatures were invalid: EXPKEYSIG 172B5989FCD21EF8 CF CLI Team <cf-cli-eng@pivotal.io>
+Fetched 5229 B in 3s (1544 B/s)
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+193 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+root@goorm:/workspace/Linux# apt list --upgradable
+Listing... Done
+apt/bionic-updates 1.6.14 amd64 [upgradable from: 1.6.12]
+ca-certificates/bionic-updates,bionic-security 20211016ubuntu0.18.04.1 all [upgradable from: 20180409]
+cpp-7/bionic-updates,bionic-security 7.5.0-3ubuntu1~18.04 amd64 [upgradable from: 7.4.0-1ubuntu1~18.04.1]
+cron/bionic-updates,bionic-security 3.0pl1-128.1ubuntu1.2 amd64 [upgradable from: 3.0pl1-128.1ubuntu1]
+
+root@goorm:/workspace/Linux# apt install cron
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Suggested packages:
+  anacron logrotate checksecurity exim4 | postfix | mail-transport-agent
+The following packages will be upgraded:
+  cron
+1 upgraded, 0 newly installed, 0 to remove and 184 not upgraded.
+Need to get 69.5 kB of archives.
+
+
+root@goorm:/workspace/Linux# sudo apt upgrade
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Calculating upgrade... Done
+The following packages will be upgraded:
+  apt apt-transport-https apt-utils base-files binutils binutils-common
+  binutils-x86-64-linux-gnu bsdutils ca-certificates cpp-7 curl dbus dirmngr
+  distro-info-data dmsetup dpkg dpkg-dev e2fsprogs fdisk file g++-7 gcc-7 gcc-7-base
+  gcc-8-base git git-man gnupg gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client
+  gpg-wks-server gpgconf gpgsm gpgv grep gzip krb5-locales libapt-inst2.0 libapt-pkg5.0
+  libasan4 libasn1-8-heimdal libatomic1 libaudit-common libaudit1 libbinutils libblkid1
+  libbsd0 libc-bin libc-dev-bin libc6 libc6-dev libcc1-0 libcilkrts5 libcom-err2
+  libcryptsetup12 libcurl3-gnutls libcurl4 libdbus-1-3 libdevmapper1.02.1 libdpkg-perl
+  libexpat1 libexpat1-dev libext2fs2 libfdisk1 libgcc-7-dev libgcc1 libgcrypt20
+  libglib2.0-0 libglib2.0-data libgmp10 libgnutls30 libgomp1 libgssapi-krb5-2
+  libgssapi3-heimdal libhcrypto4-heimdal libheimbase1-heimdal libheimntlm0-heimdal
+  libhogweed4 libhx509-5-heimdal libicu60 libidn2-0 libitm1 libjson-c3 libk5crypto3
+  libkeyutils1 libkmod2 libkrb5-26-heimdal libkrb5-3 libkrb5support0 libksba8
+  libldap-2.4-2 libldap-common liblsan0 liblz4-1 liblzma5 libmagic-mgc libmagic1
+  libmount1 libmpx2 libnettle6 libnss-systemd libp11-kit0 libpam-modules
+  libpam-modules-bin libpam-runtime libpam-systemd libpam0g libpcre3 libperl5.26
+  libprocps6 libpython3.6 libpython3.6-minimal libpython3.6-stdlib libquadmath0
+  libroken18-heimdal libsasl2-2 libsasl2-modules libsasl2-modules-db libseccomp2
+  libsepol1 libsmartcols1 libsqlite3-0 libss2 libssl1.0.0 libssl1.1 libstdc++-7-dev
+  libstdc++6 libsvn1 libsystemd0 libtsan0 libubsan0 libudev1 libuuid1 libwind0-heimdal
+  libx11-6 libx11-data libxau6 libxml2 libzstd1 linux-libc-dev locales login mount
+  multiarch-support networkd-dispatcher openssh-client openssh-server openssh-sftp-server
+  openssl passwd perl perl-base perl-modules-5.26 procps python-apt-common
+  python-cryptography python-pip python-pip-whl python-xdg python3-apt
+  python3-software-properties python3-urllib3 python3.6 python3.6-minimal
+  software-properties-common ssh subversion sudo systemd systemd-sysv tar tzdata
+  ubuntu-keyring unattended-upgrades unzip util-linux vim vim-common vim-runtime xxd
+  xz-utils zlib1g
+184 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 113 MB of archives.
+After this operation, 5232 kB of additional disk space will be used.
+Do you want to continue? [Y/n] n
+
+
+root@goorm:/workspace/Linux# sudo apt dist-upgrade
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Calculating upgrade... Done
+The following packages will be upgraded:
+  apt apt-transport-https apt-utils base-files binutils binutils-common
+  binutils-x86-64-linux-gnu bsdutils ca-certificates cpp-7 curl dbus dirmngr
+  distro-info-data dmsetup dpkg dpkg-dev e2fsprogs fdisk file g++-7 gcc-7 gcc-7-base
+  gcc-8-base git git-man gnupg gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client
+  gpg-wks-server gpgconf gpgsm gpgv grep gzip krb5-locales libapt-inst2.0 libapt-pkg5.0
+  libasan4 libasn1-8-heimdal libatomic1 libaudit-common libaudit1 libbinutils libblkid1
+  libbsd0 libc-bin libc-dev-bin libc6 libc6-dev libcc1-0 libcilkrts5 libcom-err2
+  libcryptsetup12 libcurl3-gnutls libcurl4 libdbus-1-3 libdevmapper1.02.1 libdpkg-perl
+  libexpat1 libexpat1-dev libext2fs2 libfdisk1 libgcc-7-dev libgcc1 libgcrypt20
+  libglib2.0-0 libglib2.0-data libgmp10 libgnutls30 libgomp1 libgssapi-krb5-2
+  libgssapi3-heimdal libhcrypto4-heimdal libheimbase1-heimdal libheimntlm0-heimdal
+  libhogweed4 libhx509-5-heimdal libicu60 libidn2-0 libitm1 libjson-c3 libk5crypto3
+  libkeyutils1 libkmod2 libkrb5-26-heimdal libkrb5-3 libkrb5support0 libksba8
+  libldap-2.4-2 libldap-common liblsan0 liblz4-1 liblzma5 libmagic-mgc libmagic1
+  libmount1 libmpx2 libnettle6 libnss-systemd libp11-kit0 libpam-modules
+  libpam-modules-bin libpam-runtime libpam-systemd libpam0g libpcre3 libperl5.26
+  libprocps6 libpython3.6 libpython3.6-minimal libpython3.6-stdlib libquadmath0
+  libroken18-heimdal libsasl2-2 libsasl2-modules libsasl2-modules-db libseccomp2
+  libsepol1 libsmartcols1 libsqlite3-0 libss2 libssl1.0.0 libssl1.1 libstdc++-7-dev
+  libstdc++6 libsvn1 libsystemd0 libtsan0 libubsan0 libudev1 libuuid1 libwind0-heimdal
+  libx11-6 libx11-data libxau6 libxml2 libzstd1 linux-libc-dev locales login mount
+  multiarch-support networkd-dispatcher openssh-client openssh-server openssh-sftp-server
+  openssl passwd perl perl-base perl-modules-5.26 procps python-apt-common
+  python-cryptography python-pip python-pip-whl python-xdg python3-apt
+  python3-software-properties python3-urllib3 python3.6 python3.6-minimal
+  software-properties-common ssh subversion sudo systemd systemd-sysv tar tzdata
+  ubuntu-keyring unattended-upgrades unzip util-linux vim vim-common vim-runtime xxd
+  xz-utils zlib1g
+184 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0 B/113 MB of archives.
+After this operation, 5232 kB of additional disk space will be used.
+Do you want to continue? [Y/n] n
+Abort.
+
+root@goorm:/workspace/Linux# ls
+README.md  goorm.manifest  if-else
+
+root@goorm:/workspace/Linux# pwd
+/workspace/Linux
+
+root@goorm:/workspace/Linux# mkdir sathish
+root@goorm:/workspace/Linux# ls
+README.md  goorm.manifest  if-else  sathish
+
+root@goorm:/workspace/Linux# mv sathish new-sathish
+root@goorm:/workspace/Linux# ls
+README.md  goorm.manifest  if-else  new-sathish
+
+root@goorm:/workspace/Linux# touch sample.txt
+root@goorm:/workspace/Linux# ls
+README.md  goorm.manifest  if-else  new-sathish  sample.txt
+
+
+root@goorm:/workspace/Linux# touch paste.txt
+root@goorm:/workspace/Linux# ls
+README.md  goorm.manifest  if-else  new-sathish  paste.txt  sample.txt
+root@goorm:/workspace/Linux# cat sample.txt
+How to do Copy Paste
+root@goorm:/workspace/Linux# cp sample.txt paste.txt
+root@goorm:/workspace/Linux# cat paste.txt
+How to do Copy Paste
+
+root@goorm:/workspace/Linux# rm paste.txt
+root@goorm:/workspace/Linux# ls
+README.md  goorm.manifest  if-else  new-sathish  sample.txt
+root@goorm:/workspace/Linux#
+
+
+root@goorm:/workspace/Linux# ln -s sample.txt quick.txt
+root@goorm:/workspace/Linux# ls -l quick.txt
+lrwxrwxrwx 1 root root 10  1월  3 07:54 quick.txt -> sample.txt
+
+Clear - Clear Terminal
+
+root@goorm:/workspace/Linux# echo "Welcome"
+Welcome
+
+
+root@goorm:/workspace/Linux# less sample.txt
+Less ( Open on New Tab Show Content of File )ma
+
+root@goorm:/workspace/Linux# uname
+Linux
+root@goorm:/workspace/Linux# uname -a
+Linux goorm 4.4.0-1128-aws #142-Ubuntu SMP Fri Apr 16 12:42:33 UT
+C 2021 x86_64 x86_64 x86_64 GNU/Linux
+
+root@goorm:/workspace/Linux# whoami
+root
+
+root@goorm:/workspace/Linux# tar -cvf sathish.tar sample.txt
+sample.txt
+root@goorm:/workspace/Linux# ls
+README.md  goorm.manifest  if-else  new-sathish  quick.txt  sampl
+e.txt  sathish.tar
+
+
+root@goorm:/workspace/Linux# cat good.txt
+Sunday
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+Saturday
+
+Good Friday
+root@goorm:/workspace/Linux# grep "Friday" good.txt
+Friday
+Good Friday
+
+root@goorm:/workspace/Linux# head tail-head.txt ( Print First 10 Lines )
+TXT test file Purpose: Provide example of this file type
+Document file type: TXT Version: 1.0 Remark: Example
+content: The names "John Doe" for males, "Jane Doe" or
+"Jane Roe" for females, or "Jonnie Doe" and "Janie Doe"
+for children, or just "Doe" non-gender-specifically are
+used as placeholder names for a party whose true identity
+is unknown or must be withheld in a legal action, case,
+or discussion. The names are also used to refer to
+acorpse or hospital patient whose identity is unknown.
+This practice is widely used in the United States and
+
+
+root@goorm:/workspace/Linux# tail tail-head.txt ( Print Lasst 10 Lines )diff
+Other early alternatives such as John Stiles and Richard
+Miles are now rarely used, and Mary Major has been used
+in some American federal cases. File created by
+https://www.online-convert.com More example files:
+https://www.online-convert.com/file-type Text of Example
+content: Wikipedia
+(https://en.wikipedia.org/wiki/John_Doe) License:
+Attribution-ShareAlike 4.0
+(https://creativecommons.org/licenses/by-sa/4.0/)
+Feel free to use and share the file according to the license abov
+e.
+
+
+root@goorm:/workspace/Linux# diff sample.txt good.txt
+1c1,9
+< How to do Copy Paste
+---
+> Sunday
+> Monday
+> Tuesday
+> Wednesday
+> Thursday
+> Friday
+> Saturday
+>
+> Good Friday
+
+root@goorm:/workspace/Linux# cmp sample.txt good.txt
+sample.txt good.txt differ: byte 1, line 1
+
+root@goorm:/workspace/Linux# sort good.txt
+
+Friday
+Good Friday
+Monday
+Saturday
+Sunday
+Thursday
+Tuesday
+Wednesday
+
+root@goorm:/workspace/Linux# student=sathish
+root@goorm:/workspace/Linux# export student
+root@goorm:/workspace/Linux# printenv student
+sathish
+
+root@goorm:/workspace/Linux# zip -9 -r -e test.zip if-else first.
+txt
+Enter password:
+Verify password:
+  adding: if-else/ (stored 0%)
+  adding: if-else/admin.txt.save.1 (stored 0%)
+  adding: if-else/odd-even.sh (deflated 25%)
+  adding: if-else/mark.sh (deflated 36%)
+  adding: if-else/admin.txt (stored 0%)
+  adding: if-else/greater.sh (deflated 48%)
+  adding: if-else/password.sh (deflated 19%)
+  adding: if-else/admin.txt.save (stored 0%)
+  adding: first.txt (stored 0%)
+root@goorm:/workspace/Linux# ls
+first.txt       if-else      README.md    second.txt
+good.txt        new-sathish  sample.txt   tail-head.txt
+goorm.manifest  quick.txt    sathish.tar  test.zip
+
+root@goorm:/workspace/Linux# unzip -p test.zip
+[test.zip] if-else/admin.txt.save.1 password:
+ "Login Succeesfull"
+#!/bin/bash
+
+root@goorm:/workspace/Linux# ps
+    PID TTY          TIME CMD
+    274 pts/4    00:00:00 bash
+    332 pts/4    00:00:00 ps
+
+root@goorm:/workspace/Linux# ps -A
+    PID TTY          TIME CMD
+      1 ?        00:00:00 sshd
+     55 ?        00:00:00 sshd
+     70 pts/0    00:00:00 bash
+     80 ?        00:00:00 sshd
+     95 ?        00:00:00 sshd
+     97 pts/1    00:00:00 bash
+    120 pts/2    00:00:00 bash
+    125 ?        00:00:00 sshd
+    147 pts/3    00:00:00 bash
+    167 ?        00:00:00 sshd
+    238 pts/5    00:00:00 bash
+    259 ?        00:00:00 sshd
+    274 pts/4    00:00:00 bash
+    947 pts/4    00:00:00 ps
+root@goorm:/workspace/Linux# kill 55
+
+root@goorm:/workspace/Linux# ps -A
+    PID TTY          TIME CMD
+      1 ?        00:00:00 sshd
+     80 ?        00:00:00 sshd
+     95 ?        00:00:00 sshd
+     97 pts/1    00:00:00 bash
+    120 pts/2    00:00:00 bash
+    125 ?        00:00:00 sshd
+    147 pts/3    00:00:00 bash
+    167 ?        00:00:00 sshd
+    238 pts/5    00:00:00 bash
+    259 ?        00:00:00 sshd
+    274 pts/4    00:00:00 bash
+   1143 pts/4    00:00:00 ps
+root@goorm:/workspace/Linux# pkill -e bash
+bash killed (pid 97)
+bash killed (pid 120)
+bash killed (pid 147)
+bash killed (pid 238)
+bash killed (pid 274)
+
+
+root@goorm:/workspace/Linux# df
+Filesystem     1K-blocks     Used Available Use% Mounted on
+none            10189112   226640   9421852   3% /
+tmpfs              65536        0     65536   0% /dev
+tmpfs            8022836        0   8022836   0% /sys/fs/cgroup
+shm                65536        0     65536   0% /dev/shm
+/dev/nbd42p1    10189112   226640   9421852   3% /workspace
+/dev/nvme0n1p1  81254044 72993124   8244536  90% /goorm
+tmpfs            8022836        0   8022836   0% /proc/acpi
+tmpfs            8022836        0   8022836   0% /proc/scsi
+tmpfs            8022836        0   8022836   0% /sys/firmware
+root@goorm:/workspace/Linux# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+none            9.8G  222M  9.0G   3% /
+tmpfs            64M     0   64M   0% /dev
+tmpfs           7.7G     0  7.7G   0% /sys/fs/cgroup
+shm              64M     0   64M   0% /dev/shm
+/dev/nbd42p1    9.8G  222M  9.0G   3% /workspace
+/dev/nvme0n1p1   78G   70G  7.9G  90% /goorm
+tmpfs           7.7G     0  7.7G   0% /proc/acpi
+tmpfs           7.7G     0  7.7G   0% /proc/scsi
+tmpfs           7.7G     0  7.7G   0% /sys/firmware
+
+root@goorm:/workspace/Linux# sudo chown root:root dfgh.sh
+root@goorm:/workspace/Linux# ls -l | grep dfgh.sh
+-rw-rw-r-- 1 root root     0 Jan  4 05:01 dfgh.sh
+
+root@goorm:/workspace/Linux# ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.17.0.2  netmask 255.255.0.0  broadcast 172.17.25
+5.255
+        ether 02:42:ac:11:00:02  txqueuelen 0  (Ethernet)
+        RX packets 1535  bytes 167689 (167.6 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1055  bytes 160361 (160.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions
+0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        loop  txqueuelen 1  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions
+0
+
+
+root@goorm:/workspace/Linux# wget -c https://www.africau.edu/imag
+es/default/sample.pdf
+--2023-01-04 05:19:49--  https://www.africau.edu/images/default/s
+ample.pdf
+Resolving www.africau.edu (www.africau.edu)... 34.126.176.189
+Connecting to www.africau.edu (www.africau.edu)|34.126.176.189|:4
+43... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3028 (3.0K) [application/pdf]
+Saving to: ‘sample.pdf’
+
+sample.pdf       100%[=======>]   2.96K  --.-KB/s    in 0s
+
+2023-01-04 05:19:49 (595 MB/s) - ‘sample.pdf’ saved [3028/3028]
+
+root@goorm:/workspace/Linux# ls
+ dfgh.sh                                           README.md
+ first.txt                                         sample.pdf
+ good.txt                                          sample.txt
+ goorm.manifest                                    sathish.tar
+ if-else                                           second.txt
+'money-heist-season-4-recap.jpeg?resize=768,432'   tail-head.txt
+ new-sathish                                       test.zip
+ quick.txt
+
+
+root@goorm:/workspace/Linux# passwd
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+root@goorm:/workspace/Linux#

@@ -1,0 +1,112 @@
+root@goorm:~# sudo apt-get install vim
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+vim is already the newest version (2:8.0.1453-1ubuntu1.9).
+0 upgraded, 0 newly installed, 0 to remove and 176 not upgraded.
+
+root@goorm:~# vim me.sh
+
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+"me.sh" [New File]
+
+
+Click i- button to gett inert mode write codes 
+
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+-- INSERT --
+
+
+write codes after click esc
+shift + : click type q for quit, w for write, wq for write and quit
+
+echo "Sathish"
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+:wq
+
+
+root@goorm:~# ls
+fruits.txt  me.sh  money-heist_sxwz.1280.jpg  prac
+
+root@goorm:~# bash me.sh
+Sathish
+
+
+
